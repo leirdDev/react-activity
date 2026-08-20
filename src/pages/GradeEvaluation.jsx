@@ -40,6 +40,8 @@ export default function GradeEvaluation() {
   };
 
   const clearFields = () => {
+    setError("")
+    setGrade("")
     setStudentName("");
     setScore("");
   };
@@ -65,7 +67,14 @@ export default function GradeEvaluation() {
           type="number"
         />
         {error && <p className="text-red-500 font-medium">{error}</p>}
-        {grade && <p className="text-green-500 font-medium">{grade}</p>}
+        {grade && (
+          <div className="bg-green-200 mt-2 p-4 font-medium text-green-900">
+            <p>Student Name: {studentName}</p>
+            <p>Score: {score}</p>
+
+            <p>Grade: {grade}</p>
+          </div>
+        )}
 
         <div className="flex gap-2">
           <Button onClick={handleSubmit}>Evaluate</Button>
