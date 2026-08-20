@@ -78,7 +78,9 @@ export default function Login() {
               value={password}
               type="password"
             />
-            {errors.length > 0 && <p className="text-red-500">{errors[0]}</p>}
+            {errors.length > 0 && (
+              <p className="text-red-500 font-medium">{errors[0]}</p>
+            )}
             <Button onClick={submitLogin}>Login</Button>
             <p className="text-xs text-center mt-2">
               Sample credentials — Username: admin, Password: 12345
