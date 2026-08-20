@@ -27,25 +27,44 @@ function App() {
 
 function Home(){
 
-  const items =
-  [
-    {title: "Login Authentication", body: "Validate a username and password against sample credentials and manage login/logout state."},
-    {title: "Student Grade Evaluation", body: "Enter a student's score and get an automatic remark based on grade ranges."},
-    {title: "Password Strength Checker", body: "Check password length and receive live feedback on how strong it is."},
-    {title: "Electricity Bill Calculator", body: "Calculate a customer's electricity bill based on kWh consumption and tiered rates."},
-    {title: "Employee Attendance Checker", body: "Check an employee's time-in and determine whether they are on time, late, or very late."},
-  ]
+  const items = [
+    {
+      title: "Login Authentication",
+      body: "Validate a username and password against sample credentials and manage login/logout state.",
+      link: "/login",
+    },
+    {
+      title: "Student Grade Evaluation",
+      body: "Enter a student's score and get an automatic remark based on grade ranges.",
+      link: "/grade-evaluation",
+    },
+    {
+      title: "Password Strength Checker",
+      body: "Check password length and receive live feedback on how strong it is.",
+      link: "/password-checker",
+    },
+    {
+      title: "Electricity Bill Calculator",
+      body: "Calculate a customer's electricity bill based on kWh consumption and tiered rates.",
+      link: "/electricity-bill",
+    },
+    {
+      title: "Employee Attendance Checker",
+      body: "Check an employee's time-in and determine whether they are on time, late, or very late.",
+      link: "/attendance-checker",
+    },
+  ];
 
   return (
     <div >
-      <h1 className="text-center text-6xl  font-medium m-4">
+      <h1 className="text-center text-6xl  font-medium mb-4">
         React Activity Portal
       </h1>
       <p className="text-center">
         Five interactive React activities demonstrating state, events,
         conditional logic, validation, and calculations.
       </p>
-      <ul className="flex flex-wrap justify-center gap-4 px-6">
+      <ul className="flex flex-wrap justify-center gap-x-4 gap-y-0 px-6">
         {items.map((item, index) => {
           return (
             <li
@@ -58,7 +77,7 @@ function Home(){
               <h3 className="font-medium my-2 text-xl">{item.title}</h3>
               <p className="mb-6">{item.body}</p>
               <div className="bg-black p-2 text-center text-white font-medium mt-auto">
-                <NavLink className="block">Open Activity</NavLink>
+                <NavLink className="block" to={item.link}>Open Activity</NavLink>
               </div>
             </li>
           );
